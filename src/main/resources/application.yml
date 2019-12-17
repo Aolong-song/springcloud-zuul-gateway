@@ -1,0 +1,29 @@
+spring :
+  application :
+    name: springcloud-zuul-gateway
+server:
+  port: 8012
+eureka:
+  client:
+   serviceUrl:
+      defaultZone: http://112.124.5.232:8011/eureka/
+zuul:
+  routes:
+    topic:
+      path: /topic/**
+      url: http://112.124.5.232:8013/topicsService/
+    collection:
+      path: /collect/**
+      url: http://112.124.5.232:8014/collectService/
+    comment:
+      path: /comment/**
+      url: http://112.124.5.232:8015/commentService/
+    footprint:
+      path: /footprint/**
+      url: http://112.124.5.232:8016/footprintService/
+    goods:
+      path: /goods/**
+      url: http://112.124.5.232:8017/goodsService/
+    ad:
+      path: /ad/**
+      url: http://112.124.5.232:8018/adService/
